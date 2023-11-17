@@ -1,11 +1,11 @@
 import pygame
-import pygame.rect as Rect
+import pygame.rect as rect
 import pygame.display as Display
 import pygame.draw as Draw
 import random
 
 GRAVITY = 0.2
-GAME_SPEED = 2
+GAME_SPEED = 50
 
 MAX_PIPES = 4
 PIPE_WIDTH_SCALAR = 10
@@ -15,14 +15,16 @@ BIRD_SIZE = 30
 
 pygame.init()
 screen = Display.set_mode((720, 1280))
+clock = pygame.time.Clock()
+
 HEIGHT = screen.get_height()
 WIDTH = screen.get_width()
 
 
 class Pipe:
     def __init__(self):
-        gap_top = random.randint(HEIGHT * 0.25, HEIGHT * 0.75)
-        gap_height = gap_top + random.randint(BIRD_SIZE * 1.25, BIRD_SIZE * 2)
+        gap_top = random.randint(int(HEIGHT * 0.25), int(HEIGHT * 0.75))
+        gap_height = gap_top + random.randint(int(BIRD_SIZE * 1.25), BIRD_SIZE * 2)
         starting_x = WIDTH * 1.25
 
         self.gap = {
@@ -30,11 +32,11 @@ class Pipe:
             "bottom": gap_height + gap_top,
         }
 
-        self.top_rect = Rect(
+        self.top_rect = rect.Rect(
             (starting_x, -PIPE_Y_BUFFER),
             (WIDTH / PIPE_WIDTH_SCALAR, self.gap["top"] + PIPE_Y_BUFFER),
         )
-        self.bottom_rect = Rect(
+        self.bottom_rect = rect.Rect(
             (starting_x, self.gap["bottom"]),
             (WIDTH / PIPE_WIDTH_SCALAR, HEIGHT + PIPE_Y_BUFFER),
         )
@@ -48,8 +50,8 @@ class Pipe:
         Draw.rect(screen, self.color, self.bottom_rect)
 
     def move(self, amount=GAME_SPEED):
-        self.top_rect.move_ip(amount)
-        self.bottom_rect.move_ip(amount)
+        self.top_rect.move_ip(-amount, 0)
+        self.bottom_rect.move_ip(-amount, 0)
 
         self.offscreen = self.top_rect.x + self.top_rect.width < 0
 
@@ -77,6 +79,11 @@ def move_all():
             index += 1
 
 
+def draw_all():
+    for pipe in pipes:
+        pipe.draw()
+
+
 running = True
 while running:
     for event in pygame.event.get():
@@ -84,6 +91,11 @@ while running:
             running = False
 
     screen.fill("skyblue")
+
+    move_all()
+
+    Display.flip()
+    clock.tick(60)
 
 
 pygame.quit()
