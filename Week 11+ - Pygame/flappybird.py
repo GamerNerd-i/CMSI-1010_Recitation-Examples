@@ -1,5 +1,3 @@
-from email.header import Header
-from sys import set_coroutine_origin_tracking_depth
 import pygame
 import pygame.rect as rect
 import pygame.display as Display
