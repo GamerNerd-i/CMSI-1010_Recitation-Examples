@@ -37,7 +37,7 @@ make them negative, although they'll change from booleans to integers.
 print(-lucky_number)
 print(-True)
 # This throws a TypeError!
-print(-"Hello!")
+# print(-"Hello!")
 
 """We'll get into this later, but the math symbols aren't just for numbers. Strings
 will also use some of them in ways that make sense if you think about it.
