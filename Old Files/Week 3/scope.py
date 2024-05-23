@@ -19,9 +19,6 @@ see what's in the room, including what you brought into it. Here are some exampl
 # Global code can be seen by everything. You'll usually hear this in terms of variables.
 # Any completely unindented code is considered global.
 
-from tokenize import triple_quoted
-
-
 word = "dog"
 
 
