@@ -2,13 +2,16 @@
 
 This week marks a significant transition for 1010. Although the labs will stay in Google Colab, the problem sets will now be done in "real" Python, and you'll start using git, GitHub, and the terminal directly.
 
-***DISCLAIMER***: This Markdown file will *not* go over the process of installing [git/Git Bash](https://git-scm.com/downloads), [Python](https://www.python.org/downloads/), or a text editor ([Visual Studio Code](https://code.visualstudio.com/download) preferred). Those installations should have been completed in class.
+***DISCLAIMER***: This Markdown file will *not* go over the process of installing [git / Git Bash](https://git-scm.com/downloads), [Python](https://www.python.org/downloads/), or a text editor ([Visual Studio Code](https://code.visualstudio.com/download) preferred). Those installations should have been completed in class.
+
+## The Terminal
 
 ## Git and GitHub
 
 If you're reading this, you're probably reading it on GitHub. Hopefully, by now you recognize that GitHub is a "cloud storage" database for code, like a specialized version of Google Drive or Microsoft OneDrive.
 
 **GitHub** and **git** are not the same thing; they are two individual programs that work very closely together. Google Docs/Slides/Sheets and Google Drive are not the same thing, but they are naturally integrated with each other.
+
 GitHub is what's called a *version control* system. Google Drive applications have much smaller version control systems built in which allow you to revert a document to a previous save (Go look: it's the clock-arrow icon in the top right corner). For example, if you revise the paragraph of an essay in Google Docs but decide your previous wording was better, you can use the version control to revert the document to that previous state. GitHub serves the same purpose, but has a vastly expanded toolset to better suit writing code.
 
 ### Git Locations
