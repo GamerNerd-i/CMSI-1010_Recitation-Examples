@@ -42,3 +42,9 @@ A "directory" outside of computing *directs* people to things they need, such as
 With this in mind, I like to think of your computer and its directories as a house with a bunch of rooms. Each directory is a room; while you're standing in that room, you can only see items in that room (files), doors to the next rooms (directories), or the door you came in from.
 
 Here's a doodle of this analogy in action for the entire "Week 7" folder in this repo:
+
+![Visual of the "rooms" inside Week 7](Images/Assets/rooms.png)
+
+Let's get started with your navigation commands, using our visual to help us through it.
+
+#### List Items
