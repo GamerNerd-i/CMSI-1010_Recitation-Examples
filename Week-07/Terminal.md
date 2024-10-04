@@ -41,10 +41,80 @@ A "directory" outside of computing *directs* people to things they need, such as
 
 With this in mind, I like to think of your computer and its directories as a house with a bunch of rooms. Each directory is a room; while you're standing in that room, you can only see items in that room (files), doors to the next rooms (directories), or the door you came in from.
 
-Here's a doodle of this analogy in action for the entire "Week 7" folder in this repo:
+Here's a "map" of this analogy in action for (most of) the `Week-07` folder in this repo:
 
 ![Visual of the "rooms" inside Week 7](Images/Assets/rooms.png)
 
-Let's get started with your navigation commands, using our visual to help us through it.
+Let's get started with your navigation commands, using our visual to help us through it. I recommend downloading `Week-07` to your computer and following along if you can. To get to the right place, follow these steps:
 
-#### List Items
+1. Open your shell: **Terminal** for Macs, or **Git Bash** (NOT Command Prompt!) for Windows. You should see a line that looks something like `[USER]@[PCNAME] ~ %` with a cursor already ready to go.
+2. Type `cd` and a space. I will explain this command very soon -- for now, just know that it moves your shell to the directory specified.
+3. Find the `Week-07` folder that you downloaded in your usual File Explorer: Mac's is called Finder.
+4. Drag the `Week-07` folder into your shell window. This should add a filepath, something along the lines of `/Users/[USER]/Downloads/Week-07`. On Mac, this includes `Users`, but on Windows you will probably see `C:/` instead.
+5. Hit ENTER to run the command. Your shell should now say something like `[USER]@[PCNAME] Week-07 %`.
+6. If you want, type `clear` and hit ENTER to wipe the previous command and start with a fresh template.
+
+I will be using a Mac for the following examples, so my shell is **Terminal**. If you're a Windows user, as long as you're using **Git Bash** your commands will be identical.
+
+#### `ls` - List Items
+
+We can check what items we can "see" in our current shell position by using the `ls` command.
+
+> The list command `ls` lists all items in the current directory.
+
+Think of this like taking a second to look around the room for anything of interest. It helps us get our bearings if we're not sure if we're in the right directory.
+
+Run the command in your shell. It should look something like this:
+
+![Output of the ls command from inside Week-07](Images/Commands/ls-1.png)
+
+You can check both your file explorer and our map above to confirm that these are, in fact, the items in this room.
+
+#### `cd` - Change Directory
+
+> The **c**hange **d**irectory command `cd [FILEPATH]` moves our shell to the directory given by `FILEPATH`.
+
+`cd` lets you follow a (file)path to walk to a specific room. That room can be just next door, or several doors down. Just don't try to walk into a room that doesn't exist!
+
+`cd` assumes that your path is **relative**: that it starts from the current room. You can also give a path that is **absolute**. An absolute filepath begins all the way at the **root**, which for us would be the very front door of our house.
+
+> The **root** is the highest level of your file system, from which you can access every other file on your computer.
+>
+> * On a Mac, the root is denoted by a tilde (`~`).
+> * On Windows, the root is denoted by a lettered drive, usually `C:/`.
+
+Let's move into the `Memes` directory. Run `cd Images/Memes`, and then run `ls` again to check what we can see. Your shell should look like the following:
+
+![Output of cd Images/Memes from inside Week-07](Images/Commands/cd-1.png)
+
+Once again, check your file explorer to confirm that our shell has moved into the `Memes` folder. We can update our map with our current location as well:
+
+![Updated map of file structure after cd Images/Memes](Images/Commands/cd-2.png)
+
+Let's say we want to move to `Assets`. We could use an absolute path, but that's a lot of work for very little movement. Instead, here's a feature exclusive to relative filepaths:
+
+> Using `..` as a directory name moves the shell to the directory one level higher than the current.
+
+`..` lets us "move backwards" through the directories. If you didn't already notice, each room only has *one* entrance, and `..` lets us walk back through that entrance.
+
+Let's move to the `Assets` folder now. Run `cd ../Assets`, and then `ls` again.
+
+![Output of cd ../Assets from inside Memes](Images/Commands/cd-3.png)
+
+And there we are! `..` let us step *backwards* into `Images`, after which we step *forward* into `Assets`. Confirm your vision with your file explorer, then check our map.
+
+![Updated map of file structure after cd ../Assets from inside Memes](Images/Commands/cd-4.png)
+
+### File Creation
+
+#### `touch`
+
+#### `mkdir`
+
+#### `cp`
+
+### File Management
+
+#### `mv`
+
+#### `rm`
