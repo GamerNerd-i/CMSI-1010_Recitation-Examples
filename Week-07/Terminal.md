@@ -107,14 +107,66 @@ And there we are! `..` let us step *backwards* into `Images`, after which we ste
 
 ### File Creation
 
-#### `touch`
+Moving around and peeking into directories is not particularly helpful on its own, so we're going to start managing files, starting with all the ways that you can create new files.
 
-#### `mkdir`
+#### `touch` - Create File
 
-#### `cp`
+> The file creation command `touch [FILENAME]` creates a new file called `FILENAME` in the shell's current directory.
+
+`FILENAME` here includes the file extension: so `.txt`, `.py`, `.png`, etc. As you can see, image, video, or other types of file extensions are valid, but not very helpful since it's hard to use an empty image file.
+
+Keep in mind that your operating system may have certain restrictions on file names, such as not being allowed to use certain characters.
+
+Practice time! Create a new `.txt` file in your current folder (`Assets`) and then check to make sure it's there.
+
+![Output of touch test-file.txt](Images/Commands/touch-1.png)
+
+If you want to be really sure, you can open and edit it. It's just a blank text file.
+
+One last thing: `touch` doesn't do anything if a file with the same name already exists in the current directory. Don't worry about deleting an existing file by "overwriting" it with a blank file.
+
+#### `mkdir` - Create Directory
+
+> The make directory command `mkdir [DIRECTORY]` creates a new folder `DIRECTORY` in the shell's current directory.
+
+Like before, your OS may have restrictions on directory names.
+
+Create a new directory inside your current folder and check that it's there.
+
+![Output of mkdir Unusued](Images/Commands/mkdir-1.png)
+
+There's not much else to say here -- enjoy your new folder... At least until we learn how to delete files. ;)
+
+#### `cp` - Copy File or Directory
+
+> The copy command `cp [SOURCEFILE] [DESTINATION]` duplicates a file `SOURCEFILE` and places it in `DESTINATION`.
+
+`DESTINATION` can either be a directory or a file name. If it's a directory, the duplicate is placed in that directory. If it's a file name, the copy is placed into the current directory, but renamed. Of course, you can combine them to do both, as we'll see soon.
+
+You've probably done this before: you right-click a file, choose "duplicate" or "copy", and then drag the new file where you want it. `cp` lets you do all that in one fell swoop.
+
+Try copying a file into our newly-made `Unused` directory, then `cd` into `Unused` and check that the copy exists.
+
+![Output of cp rooms.png Unusued](Images/Commands/cp-1.png)
+
+Now back out of `Unused` and try copying *and* renaming a file.
+
+![Output of cp rooms.png backrooms.png](Images/Commands/cp-2.png)
+
+Now try copying `matrix.jpg` into `Unused` while renaming it `old-matrix.jpg`.
+
+![Output of cp matrix.jpg Unused/old-matrix.jpg](Images/Commands/cp-3.png)
+
+Great! There's just one more important point to make about copying individual files:
+
+> Copying a file `A` onto an existing file `B` **will *overwrite* `B` using the contents in `A`**.
+
+**This is irreversible!** Be very careful about copying files onto existing files if your files are named similarly.
+
+We can also copy directories:
 
 ### File Management
 
-#### `mv`
+#### `mv` - Move File or Directory
 
-#### `rm`
+#### `rm` - Remove File or Directory
