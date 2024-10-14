@@ -163,10 +163,48 @@ Great! There's just one more important point to make about copying individual fi
 
 **This is irreversible!** Be very careful about copying files onto existing files if your files are named similarly.
 
-We can also copy directories:
+We can also copy directories by using the `-r` tag.
+
+![Output of cp -r Unused](Images/Commands/cp-4.png)
+
+> The `-r` tag stands for "recursive" and applies file-level commands to directories.
+
+We'll only go over two commands that use the `-r` tag. Copy is the first; the second is remove, which we'll get to soon.
 
 ### File Management
 
+Creating files is great, but still not enough. Here are our last two terminal commands, and they're exactly what we're missing for your usual file management system.
+
 #### `mv` - Move File or Directory
 
+> The move command `mv [SOURCE] [DIRECTORY]` removes a `SOURCE` from its current location and places it in the `DIRECTORY`.
+
+`SOURCE` can be either a file or a folder. Let's try to consolidate our unused files into one folder.
+
+To do this, we'll need to rename the files in `Unused-Copy` to be something different from the files in `Unused`. Since we just copied the files, their names are identical; if we moved them right now, we'd lose those copies!
+
+Coincidentally, `mv` also lets you rename things!
+
+> The move command can also be used to rename files by providing a filename instead of directory.
+
+We'll use this right now!
+
+![Renaming with mv](Images/Commands/mv-1.png)
+
+Great! Now we can actually move our files.
+
+![Moving files from Unused-Copy to Unused](Images/Commands/mv-2.png)
+
+Notice that we're using filepaths, including our `..` operator from before! Files or directories in other directories are entirely valid targets. You don't need to be able to see everything from the room that you're immediately standing in to make use of them.
+
+Lastly, let's move our folders out from `Assets` and into the `Images` folder.
+
+![Moving files from Unused-Copy to Unused](Images/Commands/mv-2.png)
+
+Notice again the filepaths. They might seem a little unusual, so trace them yourself to make sure you understand why they're used in this way.
+
 #### `rm` - Remove File or Directory
+
+> The remove command `rm [SOURCE]` **irreversibly deletes** the file `SOURCE`.
+
+Read that very carefully. With `rm`, there's no warning and no takebacks. That file is gone for good.
