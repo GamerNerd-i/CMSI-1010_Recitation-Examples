@@ -83,7 +83,7 @@ You can check both your file explorer and our map above to confirm that these ar
 > * On a Mac, the root is denoted by a tilde (`~`).
 > * On Windows, the root is denoted by a lettered drive, usually `C:/`.
 
-Let's move into the `Memes` directory. Run `cd Images/Memes`, and then run `ls` again to check what we can see. Your shell should look like the following:
+Let's move into the `Memes` folder. Run `cd Images/Memes`, and then run `ls` again to check what we can see. Your shell should look like the following:
 
 ![Output of cd Images/Memes from inside Week-07](Images/Commands/cd-1.png)
 
@@ -104,6 +104,20 @@ Let's move to the `Assets` folder now. Run `cd ../Assets`, and then `ls` again.
 And there we are! `..` let us step *backwards* into `Images`, after which we step *forward* into `Assets`. Confirm your vision with your file explorer, then check our map.
 
 ![Updated map of file structure after cd ../Assets from inside Memes](Images/Commands/cd-4.png)
+
+#### `pwd` - Print Working Directory
+
+`ls` lets us check what we can see, but how do we know where we are?
+
+> The **p**rint **w**orking **d**irectory command `pwd` tells you what your current filepath location is.
+
+`pwd` will show you the *full* filepath location of your shell, all the way back to the root. Although knowing the root is not super important in an example like this, it could be very important for other programs that require a filepath from the root, or for finding a folder that you can for some reason only see in the shell.
+
+Use the `pwd` command now. Our outputs won't be exactly the same, but what's important is that you recognize the first part of the path as the root, and the last part of the path as this folder: `Week-07/Images/Assets`.
+
+![pwd example from inside Assets](Images/Commands/pwd-1.png)
+
+You might also notice that the filepath here matches the filepath displayed in my shell's window title. Check yours as well. If you need to know where you are, you can just check your shell window! Of course, if you actually need to use that path, you'll need to use `pwd` to be able to copy and paste it for your purposes.
 
 ### File Creation
 
@@ -173,7 +187,7 @@ We'll only go over two commands that use the `-r` tag. Copy is the first; the se
 
 ### File Management
 
-Creating files is great, but still not enough. Here are our last two terminal commands, and they're exactly what we're missing for your usual file management system.
+Creating files is great, but still not enough. Here are our last two shell commands, and they're exactly what we're missing for your usual file management system.
 
 #### `mv` - Move File or Directory
 
@@ -207,4 +221,51 @@ Notice again the filepaths. They might seem a little unusual, so trace them your
 
 > The remove command `rm [SOURCE]` **irreversibly deletes** the file `SOURCE`.
 
-Read that very carefully. With `rm`, there's no warning and no takebacks. That file is gone for good.
+Read that very carefully. With `rm`, there's no warning, no confirmation menu, no "send to trash," and no takebacks. That file is gone for good. Be extremely careful with what you `rm`.
+
+<!-- Insert Garrett's Russian roulette meme -->
+
+For this example, we're going to `rm` our `Unused`, `Unused-Copy`, and `Memes` folders and their contents. Let's start with the items in `Unused`.
+
+![rm both "copy" items](Images/Commands/rm-1.png)
+
+Hm, this would take a while if we had to do it one by one. Thankfully, we don't have to.
+
+> `rm` accepts multiple arguments to delete at the same time: `rm [SOURCE1] [SOURCE2] ...` etc.
+
+Let's take out the last two items in our `Unused` folder at once.
+
+![rm the remaining Unused items](Images/Commands/rm-2.png)
+
+Great! An empty folder. Now we need to `rm` our two folders. There's one more thing we need to know for that, though:
+
+> `rm` can only delete directories with the `-r` tag: `rm -r [DIRECTORY]`.
+
+Just like how we used `cp -r` before to *recursively copy*, we can use `rm -r` to *recursively remove*. This deletes both the folder itself and all the items inside it - even other folders.
+
+Let's do things all in one swoop. First, we'll move `Unused-Copy` and `Memes` into `Unused`.
+
+![mv items into Unused for deletion](Images/Commands/rm-3.png)
+
+And now we'll recursively remove the whole `Unused` folder.
+
+![rm the Unused folder](Images/Commands/rm-4.png)
+
+That's that. If you really want to be sure that it's completely gone, feel free to check your Recycling or Trash. You won't find them there, or anywhere on your computer, for that matter. The `rm` command leaves no trace.
+
+## Quick Reference
+
+That was a lot! Just in case, here's a neat table of everything we just went over.
+
+| **Command** |                        **Purpose**                        |
+|:--------:|:--------------------------------------------------------:|
+| `cd [FILEPATH]` | Move the shell into `[FILEPATH]` |
+| `ls` | List all the items in the current directory |
+| `pwd` | Print working directory; Print the full filepath of the shell's current location |
+| `touch [FILENAME]` | Create an empty file called `FILENAME` in the current directory called |
+| `mkdir [DIRECTORY]` | Create an empty directory called `DIRECTORY` in the current directory |
+| `cp [-r] [SOURCEFILE] [DESTINATION]` | Copy the file (or directory, with `-r`) `SOURCEFILE` into the directory `DESTINATION` |
+| `mv [SOURCE] [DIRECTORY]` | Move the file or directory `SOURCE` into the directory `DESTINATION` |
+| `rm [-r] [SOURCE]` | Irreversibly delete the file (or directory, with `-r`) `SOURCE` |
+
+Remember these commands! You might not be using them a lot now, but they can still be very helpful to know. The shell can see everything that your file explorer might try to hide from you!
