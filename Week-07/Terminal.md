@@ -223,7 +223,7 @@ Notice again the filepaths. They might seem a little unusual, so trace them your
 
 Read that very carefully. With `rm`, there's no warning, no confirmation menu, no "send to trash," and no takebacks. That file is gone for good. Be extremely careful with what you `rm`.
 
-<!-- Insert Garrett's Russian roulette meme -->
+![Russian roulette for windows](Images/Assets/russian-roulette.png)
 
 For this example, we're going to `rm` our `Unused`, `Unused-Copy`, and `Memes` folders and their contents. Let's start with the items in `Unused`.
 
