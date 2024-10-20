@@ -20,7 +20,7 @@ First, your computer is its own space that has three segments: the *workspace*, 
 * The *index* is a middle ground between the workspace and local repository. It's a "staging ground" for code you're pretty sure is okay, but want to check one last time before pushing.
 * The *local repository* (local) is the most recent "confirmed" version of the code you're working on. Code here is presumably ready to be put on GitHub.
 
-Second, *GitHub*, as you know, is the cloud. We often refer to it as **remote**. Remember that *what you see in local is not automatically updated on remote*. If your code is not on GitHub, your professors and the TA's cannot see it. **Always rememeber to make sure that your most recent commits are on GitHub by going directly to the [repository on the GitHub website](https://github.com/) to double check.**
+Second, *GitHub*, as you know, is the cloud. We often refer to it as **remote**, while Git usually refers to it as **origin**. Remember that *what you see in local is not automatically updated on remote*. If your code is not on GitHub, your professors and the TA's cannot see it. **Always rememeber to make sure that your most recent commits are on GitHub by going directly to the [repository on the GitHub website](https://github.com/) to double check.**
 
 ### Cargo Plane Analogy
 
@@ -36,9 +36,30 @@ Before we start walking through each Git command, let's talk about a command tha
 
 > `git status` shows you the current state of your code in version control. This includes what "stage" of the process that you have code in, the number of lines changed, and any files that were added, changed, or removed since the previous version.
 
-This is your flight schedule. Anything you need to know about your package-in-transit can be found here. You'll probably use it frequently in the beginning, and use it less as you get more comfortable with the system. Still, there's no harm in checking often!
+This is your flight schedule. Anything you need to know about your package-in-transit can be found here. As an example output, here's a `git status` from this repository as I work on this file.
+
+![git status example output 1](Images/Commands/status-1.png)
+
+There's a lot of information here, but notice that there are three "stages" we can see, using our airport analogy:
+
+* `Changes to be committed`: These changes are boxed up and ready to be loaded onto the plane at any notice.
+* `Changes not staged for commit`: These changes are on our list to be boxed up for the airport, but we haven't packed them yet.
+* `Untracked files`: These changes are just lying around. They're not even on a packing list! They were just added (or renamed), so we can see them but haven't decided yet if we're going to ship them later.
+
+Here's another.
+
+![git status example output 2](Images/Commands/status-2.png)
+
+* `Your branch is ahead of 'origin' by 2 commits`: I have 2 "boxes" already loaded into the plane, but it hasn't yet taken off yet.
+* `Nothing to commit, working tree clean`: I don't have any packed boxes laying around; all my boxes are already on the plane.
+
+This information is probably daunting, but don't worry! Hopefully it'll make more sense as we go through the other commands.
+
+You'll probably use `git status` frequently in the beginning, and use it less as you get more comfortable with the system. Still, there's no harm in checking often!
 
 ### Outgoing Changes
+
+These three commands are for "outgoing" changes, relative to your local repository. Here, you're packing your boxes, loading them into the airplane, and finally watching the plane take off.
 
 #### `add` - Prepare Suggested Changes
 
