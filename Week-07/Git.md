@@ -63,7 +63,33 @@ These three commands are for "outgoing" changes, relative to your local reposito
 
 #### `add` - Prepare Suggested Changes
 
+The first thing to do when you have something to ship is to pack it up.
+
+> `git add [FILE1] [FILE2] ...` tells Git to track the changes to `FILES` for the next commit, on a per-file basis. After running `git add`, we say that the `added` changes have been **staged for commit**.
+> `git add .` tells Git to stage **all** current changes across all files.
+
+Expanding on our analogy, you can put as much as you want into a box before sealing it up. If you want to do your entire assignment before doing a single `git add .`, you technically can. However, that's not recommended since it entirely beats the purpose of having version control; you can't scroll through different versions of code if your only two versions are "haven't done anything" and "finished everything," neither of those are particularly helpful to look back on.
+
+An example is provided. Here, I'm staging my changes to `Git.md` (this file, as I write it!) and also include the images below.
+
+![git add single file output](Images/Commands/add-1.png)
+
+![git add . output](Images/Commands/add-2.png)
+
+If you're only working on one file at a time, `git add .` is probably fine. `git add [FILE]` is more helpful in projects where multiple files are closely connected, and you're trying to slowly make changes across each file one at a time.
+
 #### `commit` - Solidify Local Changes
+
+Once everything's in your box, you seal it up and put a label on it. Then, unless you intend to deliver the package yourself, you need to make sure that you give it to a carrier. Of course, once you give the package gets onto the plane, there's no takebacks; you can't change the label or open the package back up anymore.
+
+> `git commit` confirms staged changes, and bundles them together as a single version (or **commit**) of the whole codebase.
+> Commits require a **commit message**, which we add with the tag and parameter `-m "[MESSSAGE]"`
+
+Putting those two together, `git commit -m "[MESSAGE]"` "locks in" **all current staged changes** and gives them the label `MESSAGE`.
+
+Your commit message should be brief and descriptive: basically, what did you do? What changed in the code? For example, you should do a commit every time you complete a question on your problem set. Your commit messages for each commit should probably look something like `finished [PROBLEM NAME]`. If you're done with the problem set, your commit message probably looks something like `finished [PROBLEM NAME]; completed problem set`.
+
+Here are examples. Once again, these are straight from me as I write this document! Once it's on GitHub, you should be able to find these exact commit messages.
 
 #### `push` - Send Local Changes to Remote
 
