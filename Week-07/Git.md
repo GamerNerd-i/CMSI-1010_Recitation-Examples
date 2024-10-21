@@ -105,8 +105,24 @@ Commits are where we get the "version" in "version control.
 
 #### `push` - Send Local Changes to Remote
 
+You can put as many packages as you want onto the plane (ignoring the limitations of physical space), but none of those packages are going anywhere until the plane closes up and takes off into the cloud.
+
+> `git push` sends all of your **local** commits to **remote**.
+
+The two previous commands, `add` and `commit`, have been leading up to this. It doesn't matter how many commits you've made on your local repository. If you don't `push` your code, nobody can see it. Your teacher can't see it, the TAs grading your assignments can't see it, and, if you go directly to the GitHub website, not even you can see it.
+
+It's the most important, but also the simplest command.
+
 ### Incoming Changes
 
 #### `clone` - Retrieve Remote Repository
 
 #### `pull` - Update Local with Remote Changes
+
+### Tips and a Warning
+
+#### Commit Often
+
+#### Pull First
+
+#### Merge Conflicts
