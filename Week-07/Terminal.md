@@ -66,7 +66,7 @@ Think of this like taking a second to look around the room for anything of inter
 
 Run the command in your shell. It should look something like this:
 
-![Output of the ls command from inside Week-07](Images/Commands/ls-1.png)
+![Output of the ls command from inside Week-07](Images/Commands/Terminal/ls-1.png)
 
 You can check both your file explorer and our map above to confirm that these are, in fact, the items in this room.
 
@@ -85,11 +85,11 @@ You can check both your file explorer and our map above to confirm that these ar
 
 Let's move into the `Memes` folder. Run `cd Images/Memes`, and then run `ls` again to check what we can see. Your shell should look like the following:
 
-![Output of cd Images/Memes from inside Week-07](Images/Commands/cd-1.png)
+![Output of cd Images/Memes from inside Week-07](Images/Commands/Terminal/cd-1.png)
 
 Once again, check your file explorer to confirm that our shell has moved into the `Memes` folder. We can update our map with our current location as well:
 
-![Updated map of file structure after cd Images/Memes](Images/Commands/cd-2.png)
+![Updated map of file structure after cd Images/Memes](Images/Commands/Terminal/cd-2.png)
 
 Let's say we want to move to `Assets`. We could use an absolute path, but that's a lot of work for very little movement. Instead, here's a feature exclusive to relative filepaths:
 
@@ -99,11 +99,11 @@ Let's say we want to move to `Assets`. We could use an absolute path, but that's
 
 Let's move to the `Assets` folder now. Run `cd ../Assets`, and then `ls` again.
 
-![Output of cd ../Assets from inside Memes](Images/Commands/cd-3.png)
+![Output of cd ../Assets from inside Memes](Images/Commands/Terminal/cd-3.png)
 
 And there we are! `..` let us step *backwards* into `Images`, after which we step *forward* into `Assets`. Confirm your vision with your file explorer, then check our map.
 
-![Updated map of file structure after cd ../Assets from inside Memes](Images/Commands/cd-4.png)
+![Updated map of file structure after cd ../Assets from inside Memes](Images/Commands/Terminal/cd-4.png)
 
 #### `pwd` - Print Working Directory
 
@@ -115,7 +115,7 @@ And there we are! `..` let us step *backwards* into `Images`, after which we ste
 
 Use the `pwd` command now. Our outputs won't be exactly the same, but what's important is that you recognize the first part of the path as the root, and the last part of the path as this folder: `Week-07/Images/Assets`.
 
-![pwd example from inside Assets](Images/Commands/pwd-1.png)
+![pwd example from inside Assets](Images/Commands/Terminal/pwd-1.png)
 
 You might also notice that the filepath here matches the filepath displayed in my shell's window title. Check yours as well. If you need to know where you are, you can just check your shell window! Of course, if you actually need to use that path, you'll need to use `pwd` to be able to copy and paste it for your purposes.
 
@@ -133,7 +133,7 @@ Keep in mind that your operating system may have certain restrictions on file na
 
 Practice time! Create a new `.txt` file in your current folder (`Assets`) and then check to make sure it's there.
 
-![Output of touch test-file.txt](Images/Commands/touch-1.png)
+![Output of touch test-file.txt](Images/Commands/Terminal/touch-1.png)
 
 If you want to be really sure, you can open and edit it. It's just a blank text file.
 
@@ -147,7 +147,7 @@ Like before, your OS may have restrictions on directory names.
 
 Create a new directory inside your current folder and check that it's there.
 
-![Output of mkdir Unusued](Images/Commands/mkdir-1.png)
+![Output of mkdir Unusued](Images/Commands/Terminal/mkdir-1.png)
 
 There's not much else to say here -- enjoy your new folder... At least until we learn how to delete files. ;)
 
@@ -161,15 +161,15 @@ You've probably done this before: you right-click a file, choose "duplicate" or 
 
 Try copying a file into our newly-made `Unused` directory, then `cd` into `Unused` and check that the copy exists.
 
-![Output of cp rooms.png Unusued](Images/Commands/cp-1.png)
+![Output of cp rooms.png Unusued](Images/Commands/Terminal/cp-1.png)
 
 Now back out of `Unused` and try copying *and* renaming a file.
 
-![Output of cp rooms.png backrooms.png](Images/Commands/cp-2.png)
+![Output of cp rooms.png backrooms.png](Images/Commands/Terminal/cp-2.png)
 
 Now try copying `matrix.jpg` into `Unused` while renaming it `old-matrix.jpg`.
 
-![Output of cp matrix.jpg Unused/old-matrix.jpg](Images/Commands/cp-3.png)
+![Output of cp matrix.jpg Unused/old-matrix.jpg](Images/Commands/Terminal/cp-3.png)
 
 Great! There's just one more important point to make about copying individual files:
 
@@ -179,7 +179,7 @@ Great! There's just one more important point to make about copying individual fi
 
 We can also copy directories by using the `-r` tag.
 
-![Output of cp -r Unused](Images/Commands/cp-4.png)
+![Output of cp -r Unused](Images/Commands/Terminal/cp-4.png)
 
 > The `-r` tag stands for "recursive" and applies file-level commands to directories.
 
@@ -203,17 +203,17 @@ Coincidentally, `mv` also lets you rename things!
 
 We'll use this right now!
 
-![Renaming with mv](Images/Commands/mv-1.png)
+![Renaming with mv](Images/Commands/Terminal/mv-1.png)
 
 Great! Now we can actually move our files.
 
-![Moving files from Unused-Copy to Unused](Images/Commands/mv-2.png)
+![Moving files from Unused-Copy to Unused](Images/Commands/Terminal/mv-2.png)
 
 Notice that we're using filepaths, including our `..` operator from before! Files or directories in other directories are entirely valid targets. You don't need to be able to see everything from the room that you're immediately standing in to make use of them.
 
 Lastly, let's move our folders out from `Assets` and into the `Images` folder.
 
-![Moving files from Unused-Copy to Unused](Images/Commands/mv-2.png)
+![Moving files from Unused-Copy to Unused](Images/Commands/Terminal/mv-2.png)
 
 Notice again the filepaths. They might seem a little unusual, so trace them yourself to make sure you understand why they're used in this way.
 
@@ -227,7 +227,7 @@ Read that very carefully. With `rm`, there's no warning, no confirmation menu, n
 
 For this example, we're going to `rm` our `Unused`, `Unused-Copy`, and `Memes` folders and their contents. Let's start with the items in `Unused`.
 
-![rm both "copy" items](Images/Commands/rm-1.png)
+![rm both "copy" items](Images/Commands/Terminal/rm-1.png)
 
 Hm, this would take a while if we had to do it one by one. Thankfully, we don't have to.
 
@@ -235,7 +235,7 @@ Hm, this would take a while if we had to do it one by one. Thankfully, we don't 
 
 Let's take out the last two items in our `Unused` folder at once.
 
-![rm the remaining Unused items](Images/Commands/rm-2.png)
+![rm the remaining Unused items](Images/Commands/Terminal/rm-2.png)
 
 Great! An empty folder. Now we need to `rm` our two folders. There's one more thing we need to know for that, though:
 
@@ -245,11 +245,11 @@ Just like how we used `cp -r` before to *recursively copy*, we can use `rm -r` t
 
 Let's do things all in one swoop. First, we'll move `Unused-Copy` and `Memes` into `Unused`.
 
-![mv items into Unused for deletion](Images/Commands/rm-3.png)
+![mv items into Unused for deletion](Images/Commands/Terminal/rm-3.png)
 
 And now we'll recursively remove the whole `Unused` folder.
 
-![rm the Unused folder](Images/Commands/rm-4.png)
+![rm the Unused folder](Images/Commands/Terminal/rm-4.png)
 
 That's that. If you really want to be sure that it's completely gone, feel free to check your Recycling or Trash. You won't find them there, or anywhere on your computer, for that matter. The `rm` command leaves no trace.
 

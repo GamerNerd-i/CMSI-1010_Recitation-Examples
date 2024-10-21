@@ -38,7 +38,7 @@ Before we start walking through each Git command, let's talk about a command tha
 
 This is your flight schedule. Anything you need to know about your package-in-transit can be found here. As an example output, here's a `git status` from this repository as I work on this file.
 
-![git status example output 1](Images/Commands/status-1.png)
+![git status example output 1](Images/Commands/Git/status-1.png)
 
 There's a lot of information here, but notice that there are three "stages" we can see, using our airport analogy:
 
@@ -48,7 +48,7 @@ There's a lot of information here, but notice that there are three "stages" we c
 
 Here's another.
 
-![git status example output 2](Images/Commands/status-2.png)
+![git status example output 2](Images/Commands/Git/status-2.png)
 
 * `Your branch is ahead of 'origin' by 2 commits`: I have 2 "boxes" already loaded into the plane, but it hasn't yet taken off yet.
 * `Nothing to commit, working tree clean`: I don't have any packed boxes laying around; all my boxes are already on the plane.
@@ -72,9 +72,9 @@ Expanding on our analogy, you can put as much as you want into a box before seal
 
 An example is provided. Here, I'm staging my changes to `Git.md` (this file, as I write it!) and also include the images below.
 
-![git add single file output](Images/Commands/add-1.png)
+![git add single file output](Images/Commands/Git/add-1.png)
 
-![git add . output](Images/Commands/add-2.png)
+![git add . output](Images/Commands/Git/add-2.png)
 
 If you're only working on one file at a time, `git add .` is probably fine. `git add [FILE]` is more helpful in projects where multiple files are closely connected, and you're trying to slowly make changes across each file one at a time.
 
@@ -82,14 +82,26 @@ If you're only working on one file at a time, `git add .` is probably fine. `git
 
 Once everything's in your box, you seal it up and put a label on it. Then, unless you intend to deliver the package yourself, you need to make sure that you give it to a carrier. Of course, once you give the package gets onto the plane, there's no takebacks; you can't change the label or open the package back up anymore.
 
-> `git commit` confirms staged changes, and bundles them together as a single version (or **commit**) of the whole codebase.
+> `git commit` confirms staged changes, and bundles them together as a single **version** (or **commit**) of the whole codebase.
 > Commits require a **commit message**, which we add with the tag and parameter `-m "[MESSSAGE]"`
 
-Putting those two together, `git commit -m "[MESSAGE]"` "locks in" **all current staged changes** and gives them the label `MESSAGE`.
+Putting those two together, `git commit -m "[MESSAGE]"` confirms **all current staged changes** and gives them the label `MESSAGE`.
 
 Your commit message should be brief and descriptive: basically, what did you do? What changed in the code? For example, you should do a commit every time you complete a question on your problem set. Your commit messages for each commit should probably look something like `finished [PROBLEM NAME]`. If you're done with the problem set, your commit message probably looks something like `finished [PROBLEM NAME]; completed problem set`.
 
 Here are examples. Once again, these are straight from me as I write this document! Once it's on GitHub, you should be able to find these exact commit messages.
+
+![git commit output 1](Images/Commands/Git/commit-1.png)
+
+Notice a few things in this screenshot:
+
+* Git acknowledges how many files changed (`3 files changed`) and by how much they changed (`26 insertions(+)`; if I had deleted things, there would be deletions)
+* Git notices that one file was modified (`Week-07/Git.md`) and two files are brand new (`Week-07/Images/Commands/add-1.png` and `Week-07/Images/Commands/add-2.png`)
+* Git tells you how many "commits" you currently have stored (`Your branch is ahead of 'origin/work-in-progress' by 1 commit.`).
+
+Once you commit changes, they're locked in; there's no changing them anymore. Whatever was just committed is solidified as its own version of the code, a snapshot of the codebase at that time. That's not to say that the files can't be changed later on; just that those changes will be marked under a different version.
+
+Commits are where we get the "version" in "version control.
 
 #### `push` - Send Local Changes to Remote
 
