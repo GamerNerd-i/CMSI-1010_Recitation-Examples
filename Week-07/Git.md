@@ -111,11 +111,26 @@ You can put as many packages as you want onto the plane (ignoring the limitation
 
 The two previous commands, `add` and `commit`, have been leading up to this. It doesn't matter how many commits you've made on your local repository. If you don't `push` your code, nobody can see it. Your teacher can't see it, the TAs grading your assignments can't see it, and, if you go directly to the GitHub website, not even you can see it.
 
-It's the most important, but also the simplest command.
+It's the most important, but also the simplest command. It's just `git push`. No extra parameters. All the hard work of "creating" versions is done in `git add` and `git commit`, so all `git push` does is update remote.
+
+![git push output](Images/Commands/Git/push-1.png)
+
+A crucial thing to note is that you don't need to `push` after every `commit`. In this example, I'm pushing 3 different commits. Each of those commits has their own set of changes and its own commit message. If I go to the repository directly, I can see what each of those commits were:
+
+![GitHub confirmation that my push was successful](Images/Commands/Git/push-2.png)
+
+Your last step of any sequence `add`, `commit`, `push` should **always** be to check GitHub to ensure that your push was successful. If your push was successful, your terminal will say it anyway, but it doesn't hurt to double check while you're still learning the system.
 
 ### Incoming Changes
 
+These two commands are for "incoming" changes -- changes that you need to bring from GitHub to your local repository. They may look very similar, but they serve different purposes.
+
 #### `clone` - Retrieve Remote Repository
+
+When you start working on a brand-new repository, whether that's a new problem set or the start of a group project (which you will be doing at the end of this class!), you need to use `git clone` to get it from GitHub.
+
+> If you need a repository that's **on GitHub but not local**, you run `git clone`.
+> `git clone [URL]` copies the repository at `URL` into the current folder.
 
 #### `pull` - Update Local with Remote Changes
 
