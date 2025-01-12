@@ -151,7 +151,13 @@ Although this is only the "finished" screen, while the repository is cloning you
 
 We saw `push` earlier, so of course we need the opposite as well.
 
-> `git pull` retrieves all **remote** changes that are not yet on **local.**
+> `git pull` retrieves all **remote** changes for the current repository that are not yet on **local.**
+
+`pull`ing is **very important** because it ensures your workspace, the **local** space, is always up to date with all your other workspaces. Many programmers work on the same project from multiple devices at once, so ensuring that all those devices are up to date is crucial.
+
+`pull` and `push` become even more crucial once your repository starts being shared among multiple people. Ensuring that you and your partners keep both local and remote repositories updated prevents **merge conflicts**, which we'll go into detail later. For now, just know that encountering a merge conflict is somewhat of a pain to deal with, but entirely avoidable as long as everyone remembers to `push`, `pull`, and coordinate.
+
+Be aware that there will be no warning from Git that you have not `pull`ed before you start to work. `pull`ing needs to be *your* habit as the user.
 
 ### Tips and a Warning
 
