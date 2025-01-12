@@ -123,16 +123,35 @@ Your last step of any sequence `add`, `commit`, `push` should **always** be to c
 
 ### Incoming Changes
 
-These two commands are for "incoming" changes -- changes that you need to bring from GitHub to your local repository. They may look very similar, but they serve different purposes.
+These two commands are for "incoming" changes -- changes that you need to bring from GitHub to your local repository. They may look very similar, but they serve different purposes. Either way, you can think of this as air traffic control flagging down the plane to land.
 
 #### `clone` - Retrieve Remote Repository
 
 When you start working on a brand-new repository, whether that's a new problem set or the start of a group project (which you will be doing at the end of this class!), you need to use `git clone` to get it from GitHub.
 
-> If you need a repository that's **on GitHub but not local**, you run `git clone`.
+> If you need a repository that's **on GitHub but not local at all**, you run `git clone`.
 > `git clone [URL]` copies the repository at `URL` into the current folder.
 
+The URL is taken directly from the GitHub repository, as follows.
+
+![The "Code" button on a GitHub repository](Images/Commands/Git/clone-1.png)
+![Copying a repository's URL](Images/Commands/Git/clone-2.png)
+
+Technically, you can also take the URL directly from your browser bar, but don't do that, because the URL will change as you explore the repository.
+
+You might notice that there are other ways to get the code, such as using GitHub Desktop or downloading a ZIP file. It's good to keep these options in mind if the situation calls for it, but generally, all you need is the URL for `git clone`.
+
+Let's take a look at what git looks like after cloning a repository.
+
+![A successful git clone](Images/Commands/Git/clone-3.png)
+
+Although this is only the "finished" screen, while the repository is cloning you'll be able to see each item's progress in real time. Larger repositories will take more time since there's more to download.
+
 #### `pull` - Update Local with Remote Changes
+
+We saw `push` earlier, so of course we need the opposite as well.
+
+> `git pull` retrieves all **remote** changes that are not yet on **local.**
 
 ### Tips and a Warning
 
