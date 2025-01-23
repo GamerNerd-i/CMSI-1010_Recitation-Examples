@@ -153,7 +153,11 @@ We saw `push` earlier, so of course we need the opposite as well.
 
 > `git pull` retrieves all **remote** changes for the current repository that are not yet on **local.**
 
-`pull`ing is **very important** because it ensures your workspace, the **local** space, is always up to date with all your other workspaces. Many programmers work on the same project from multiple devices at once, so ensuring that all those devices are up to date is crucial.
+`pull`ing is **very important** because it ensures your workspace, the **local** space, is always up to date with all your other workspaces. Many programmers work on the same project from multiple devices at once, so ensuring that all those devices are up to date is crucial. Here's what a successful (and safe) `git pull` looks like. Notice that this terminal is on a completely different device from the other examples!
+
+![A successful git pull](Images/Commands/Git/pull-1.png)
+
+Notice that `pull` tells you what changes are coming onto your device. In this case, I'm bringing in a lot of images, and Git is performing a `Fast-forward` action. That's all fine; it just means that it's getting my local repository to "catch up" to the remote.
 
 `pull` and `push` become even more crucial once your repository starts being shared among multiple people. Ensuring that you and your partners keep both local and remote repositories updated prevents **merge conflicts**, which we'll go into detail later. For now, just know that encountering a merge conflict is somewhat of a pain to deal with, but entirely avoidable as long as everyone remembers to `push`, `pull`, and coordinate.
 
@@ -161,8 +165,30 @@ Be aware that there will be no warning from Git that you have not `pull`ed befor
 
 ### Tips and a Warning
 
+The purpose of this markdown file was to introduce the key commands necessary to use `git`. They each have their purposes, but using `git` as a whole requires an understanding of how they all work together to maintain a code base. `git` takes practice, and what's covered here is only the beginning. It's not necessary difficult; the most difficult part is forming the habits necessary to use `git` effectively.
+
+To get you started, here are three key things to keep in mind.
+
 #### Commit Often
 
-#### Pull First
+Remember that although we're using GitHub as a mode of assignment submission, `git` is, first and foremost, for **version control.** Version control is of little use if you don't create "versions" to look through as you go about your project. Being able to backpedal onto a previous version of the code is the whole point of version control. So the first tip is to make sure you're creating more versions to control:
+
+> **``commit`` often, ``push`` once.**
+
+**Commit often** means that you commit after every "section" of code, not just at the end. **Push once** doesn't *literally* mean push once per assignment, but you don't need to `push` after every `commit`. For example, your assignments from now on will usually be divided into multiple Python files, which themselves may be divided into multiple blocks of code (functions, classes, etc.). It's a good idea to `commit` after each section, and `push` once you're done working for the day, or at when you finish a file.
+
+The question of how many commits is the right number of commits has multiple answers, but people tend to agree that more commits are better, since that means there are more checkpoints to roll back your code to.
+
+You won't necessarily need to roll back code to a previous version in this class; in fact, we haven't even covered how to do that. Either way, the importance of this habit stands.
+
+#### Always Pull First
+
+At this point, you're probably familiar enough with managing cloud data to understand that both sides need to be synchronized to ensure that nothing goes wrong, whether that's cloud saves for a game or even something as simple as a shared Google Doc. As we said before, `git` won't perform these syncs automatically: you (and your team) need to do it yourself. With `git`, as with any cloud data service, `remote` should always be the most up-to-date version at any time so that `local` workspaces can start from the most recent version. That brings us to our tip:
+
+> ***ALWAYS* ``pull`` first.**
+
+The first thing you *always* do when you sit down to work on a GitHub repository is run `git status` and `git pull` to make sure that your local repository is up to date with the latest changes, whether those changes are from your teammates or just you working on a different device.
+
+The difficulty of this tip for beginners is forming the habit of running `git pull` before jumping back into code. It becomes second nature eventually, but until then you will need to make a conscious effort to `pull` first -- and to remind your groupmates to `pull` first as well.
 
 #### Merge Conflicts
