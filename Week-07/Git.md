@@ -192,3 +192,13 @@ The first thing you *always* do when you sit down to work on a GitHub repository
 The difficulty of this tip for beginners is forming the habit of running `git pull` before jumping back into code. It becomes second nature eventually, but until then you will need to make a conscious effort to `pull` first -- and to remind your groupmates to `pull` first as well.
 
 #### Merge Conflicts
+
+Another reason why you want to pull first is to avoid **merge conflicts.**
+
+> **Merge conflicts** occur when two or more commits make different changes to the same part of the file, resulting in `git` (and possibly the developers) becoming confused about which version should be kept.
+
+Have you ever been asked to do the same thing, in two different ways, by two different people? For example, maybe you're helping to cook a meal and need to cut an onion. Alex asks you to keep the onion in bigger chunks so they can be made into onion rings later, but then Robin asks you to dice them to be put into a soup. You have an instruction conflict! The only way to figure out the RIGHT way to handle the situation is to pull both Alex and Robin aside and ask them what to do with your single onion.
+
+`git` has to do the same thing. `git` will usually try to merge changes together if it can, but with a merge conflict it doesn't have any choice but to ask the author -- you and/or someone else on your team.
+
+Usually, merge conflicts are entirely avoidable. If you're working on something alone, you probably don't need to worry about merge conflicts *unless* you work on the same repository on multiple devices.
